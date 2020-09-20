@@ -17,19 +17,18 @@ class _HomeState extends State<Home> {
   double _result;
 
   void _resetFields() {
-    this.weightController.text = "";
-    this.heightController.text = "";
-
     setState(() {
       this._resultInfo = 'Informe o peso e a altura e clique em calcular';
       this._formKey.currentState.reset();
+      this.weightController.text = "";
+      this.heightController.text = "";
     });
   }
 
   void calculateIMC() {
-    // if (_formKey.currentState.validate() == false) {
-    //   return;
-    // }
+    if (_formKey.currentState.validate() == false) {
+      return;
+    }
 
     setState(() {
       double weight = double.parse(weightController.text);
@@ -37,7 +36,7 @@ class _HomeState extends State<Home> {
       Calculator calc = Calculator(weight, height);
       this._result = calc.getIMC();
       this._resultInfo =
-          "IMC ${_result.toStringAsPrecision(2)} ${calc.getResultInfo()}";
+          "IMC ${_result.toStringAsPrecision(4)} ${calc.getResultInfo()}";
       ResultsDisplay(
               context, calc.getIMC(), calc.getResultInfo(), calc.getResult())
           .show();
@@ -70,7 +69,7 @@ class _HomeState extends State<Home> {
                     TextFormField(
                         controller: this.weightController,
                         validator: (value) {
-                          return value.isEmpty ? "Informe seu peso" : "";
+                          return value.isEmpty ? "Informe seu peso" : null;
                         },
                         keyboardType: TextInputType.number,
                         maxLength: 3,
@@ -82,7 +81,7 @@ class _HomeState extends State<Home> {
                     TextFormField(
                         controller: this.heightController,
                         validator: (value) {
-                          return value.isEmpty ? "Informe sua altura" : "";
+                          return value.isEmpty ? "Informe sua altura" : null;
                         },
                         keyboardType: TextInputType.number,
                         maxLength: 3,
