@@ -63,10 +63,10 @@ class _HomeState extends State<Home> {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Image.asset('assets/images/balance_weight.png',
+                    Image.asset('assets/images/balance_weight2.png',
                         color: Colors.purple,
                         alignment: Alignment.center,
-                        height: 200),
+                        height: 250),
                     TextFormField(
                         controller: this.weightController,
                         validator: (value) {

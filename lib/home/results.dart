@@ -9,36 +9,37 @@ class ResultsDisplay {
 
   ResultsDisplay(this.context, this.imc, this.info, this.type);
 
-  Icon getIcon() {
-    IconData icon;
+  Image getIcon() {
+    String icon;
 
     switch (type) {
       case ImcTypes.below:
-        icon = Icons.fastfood;
+        icon = 'fit';
         break;
 
       case ImcTypes.normal:
-        icon = Icons.insert_emoticon;
+        icon = 'normal';
         break;
 
       case ImcTypes.light:
-        icon = Icons.accessibility_new;
+        icon = 'fat1';
         break;
 
       case ImcTypes.high:
-        icon = Icons.fitness_center;
+        icon = 'fat2';
         break;
 
       case ImcTypes.severe:
       case ImcTypes.morbid:
-        icon = Icons.local_hospital;
+        icon = 'fat3';
         break;
 
       default:
-        icon = Icons.info_outline;
+        icon = 'normal';
     }
 
-    return Icon(icon, size: 100, color: Colors.white);
+    String asset = "assets/images/$icon.png";
+    return Image.asset(asset, height: 120, color: Colors.white);
   }
 
   void show() async {
@@ -61,7 +62,7 @@ class ResultsDisplay {
                   textAlign: TextAlign.center),
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                child: Text(imc.toStringAsPrecision(2).toString(),
+                child: Text(imc.toStringAsPrecision(4),
                     style: TextStyle(
                         color: Colors.amber,
                         fontSize: 60,

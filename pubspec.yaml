@@ -52,6 +52,11 @@ flutter:
   assets:
     - assets/images/balance.png
     - assets/images/balance_weight.png
+    - assets/images/balance_weight2.png
+    - assets/images/normal.png
+    - assets/images/fat1.png
+    - assets/images/fat2.png
+    - assets/images/fat3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
