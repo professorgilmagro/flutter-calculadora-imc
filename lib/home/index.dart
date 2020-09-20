@@ -1,6 +1,7 @@
 import 'package:calculadora_imc/Calculator.dart';
 import 'package:calculadora_imc/home/results.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -62,11 +63,10 @@ class _HomeState extends State<Home> {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Icon(
-                      Icons.person_outline,
-                      size: 120,
-                      color: Colors.purple,
-                    ),
+                    Image.asset('assets/images/balance_weight.png',
+                        color: Colors.purple,
+                        alignment: Alignment.center,
+                        height: 200),
                     TextFormField(
                         controller: this.weightController,
                         validator: (value) {
