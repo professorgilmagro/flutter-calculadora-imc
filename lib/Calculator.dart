@@ -55,7 +55,7 @@ class Calculator {
       return 'Obesidade grau I';
     }
 
-    if (result == ImcTypes.high) {
+    if (result == ImcTypes.severe) {
       return 'Obesidade grau II (severa)';
     }
 

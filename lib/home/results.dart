@@ -22,14 +22,17 @@ class ResultsDisplay {
         break;
 
       case ImcTypes.light:
-        icon = 'fat1';
+        icon = 'fat';
         break;
 
       case ImcTypes.high:
-        icon = 'fat2';
+        icon = 'fat1';
         break;
 
       case ImcTypes.severe:
+        icon = 'fat2';
+        break;
+
       case ImcTypes.morbid:
         icon = 'fat3';
         break;
